@@ -11,7 +11,7 @@ export const getavailcars = async (req: Request, res: Response) => {
 
   res.status(200).json({
     message: 'This is list All Available Cars',
-    cars: carsAvailable,
+    listcars: carsAvailable,
   });
 };
 
@@ -20,8 +20,7 @@ export const getCars = async (_req: Request, res: Response) => {
   const cars = await getAllCars();
 
   res.status(200).json({
-    message: 'OK',
-    cars: cars,
+    cars,
   });
 };
 
@@ -53,7 +52,7 @@ export const createCars = async (req: Request, res: Response) => {
     const fileData = `data:${req.file.mimetype};base64,${fileBase64}`;
 
     const upload = await cloudinary.uploader.upload(fileData || req.file.path, {
-      folder: 'challenge-5-bcr', // Adjust the folder name as needed
+      folder: 'challenge-5-bcr', // Adjust folder name as needed in your cloudinary
       use_filename: true,
     });
 
@@ -99,7 +98,7 @@ export const updateCars = async (req: Request, res: Response) => {
     const fileData = `data:${req.file.mimetype};base64,${fileBase64}`;
 
     const upload = await cloudinary.uploader.upload(fileData || req.file.path, {
-      folder: 'challenge-5-bcr', // Adjust the folder name as needed
+      folder: 'challenge-5-bcr', // Adjust folder name as needed
       use_filename: true,
     });
 

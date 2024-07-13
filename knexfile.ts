@@ -1,5 +1,6 @@
 import type { Knex } from 'knex';
 import dotenv from 'dotenv';
+// Update with your config settings.
 
 dotenv.config();
 
@@ -15,7 +16,7 @@ const config: { [key: string]: Knex.Config } = {
     },
     pool: {
       min: 2,
-      max: 20,
+      max: 10,
     },
     migrations: {
       directory: './migrations',
@@ -31,7 +32,7 @@ const config: { [key: string]: Knex.Config } = {
     },
     pool: {
       min: 2,
-      max: 20,
+      max: 10,
     },
     migrations: {
       tableName: 'knex_migrations',
@@ -49,7 +50,7 @@ const config: { [key: string]: Knex.Config } = {
     },
     pool: {
       min: 2,
-      max: 20,
+      max: 10,
     },
     migrations: {
       tableName: 'knex_migrations',

@@ -25,5 +25,3 @@ export const deleteCar = (id: number) => {
 };
 
 //
-
-//
